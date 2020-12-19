@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>javascript code</title>
+</head>
+
+<body>
+    <h1 id="main-heading">HANGMAN JAVASCRIPT CODE</h1>
+	
+<div oncopy="alert('Copying forbidden!');return false">
+<pre>
+  
+  function myFunction1() {
+      var words = ["programm", "screen", "keybord", "computer", "laptop", "algorithm", "analog", "app", "array", "backup", "binary", "bit", "bite", "cache"];
+
+      var word = words[Math.floor(Math.random() * words.length)];
+
+      var answerArray = [];
+      for (var i = 0; i < word.length; i++) {
+        answerArray[i] = "_";
+      }
+
+      var remainingLetters = word.length;
+
+      while (remainingLetters > 0) {
+        alert (answerArray.join(" "));
+        var guess = prompt("Guess a letter:");
+        if (guess === null) {
+          break;
+        } else if (guess.length !== 1) {
+          alert("Enter one letter, please.");
+        } else {
+          for (var j = 0; j < word.length; j++) {
+            if (word[j] === guess) {
+              answerArray [j] = guess;
+              remainingLetters--;
+            }
+          }
+        }
+      }
+       alert (answerArray.join(" "));
+       alert ("The word was '" + word + "'!");
+        }
+  
+</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>find the treasure</title>
+</head>
+<body>
+<center>
+<table border="0" width="1350" height="50">
+<tr  bgcolor="#A5DBEEFF">
+<td width="40%"><font size="+2" face="arial"><b>GAMES</b></font></td>
+<td width="15%"><font face="arial"><p align="center"><a href="tuorlatrack.html">TUORLA TRACK</p></font></td>
+<td width="15%" bgcolor="#6E56FFFF"><font face="arial"><p align="center"><a href="find the treasure.html">FIND THE TREASURE</p></font></td>
+<td width="15%"><font face="arial"><p align="center"><a href="snake.html">SNAKE</p></font></td>
+<td width="15%"><font face="arial"><p align="center"><a href="hangman.html">HANGMAN</p></font></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<h1><font face="comic sans ms">FIND THE TREASURE</font></h1>
+<img id="map" src="treasuremap.png" width="500" height="500">
+<h3 id="distance"></h3>
+<h3 id="clicksleft"></h3>
+</center>
+
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+<script>
+var getRandomNumber = function(size) {
+  return Math.floor(Math.random() * size)
+};
+
+var getDistance = function (event, target) {
+  var diffX = event.offsetX - target.x;
+  var diffY = event.offsetY - target.y;
+  return Math.sqrt((diffX * diffX) + (diffY * diffY))
+};
+
+var getDistanceHint = function (distance) {
+  if (distance > 8) {
+    return ("Pixels away: " + distance.toFixed(0));
+  }
+};
+
+var width = 500;
+var height = 500;
+var clicks = 51;
+
+var target = {
+  x: getRandomNumber(width),
+  y: getRandomNumber(height)
+};
+
+$("#map").click(function (event) {
+  clicks--;
+  
+  var distance = getDistance(event, target);
+  
+  var distanceHint = getDistanceHint(distance);
+  
+  $("#distance").text(distanceHint);
+  $("#clicksleft").text("Clicks left: " + clicks);
+  
+  if (clicks == 0) {
+    alert("GAME OVER");
+	window.location.replace("games.html");
+  } 
+  
+  if (clicks == 10) {
+    alert("You have 10 clicks left!");
+  } 
+  
+  if (distance < 8) {
+    alert("You found the treasure! Clicks left: " + clicks);
+	window.location.replace("games.html");
+  }
+});
+</script>
+</body>
+</html>

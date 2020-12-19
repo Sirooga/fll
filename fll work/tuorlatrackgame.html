@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>TuorlaTrackGame</title>
+</head>
+
+<body bgcolor="cyan">
+	
+	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+	
+	<img src = "tuorla_points.png" width="1000" align = "right">
+	
+	<h1>START</h1>
+	
+	<script>
+	
+	var Car = function (x, y) {
+	  this.x = x;
+	  this.y = y;
+	};
+	
+	var drawCar = function (car) {
+	  var carHtml = '<img src="red circle.png">';
+	  
+	  var carElement = $(carHtml);
+	  
+	  carElement.css({
+	    position: "absolute",
+		left: car.x,
+		top: car.y
+	  });
+	  
+	  $("body").append(carElement);
+	};
+	var a = new Car (505, 10);
+	var b = new Car (491, 94);
+	var c = new Car (887, 246);
+	var d = new Car (1029, 294);
+	var e = new Car (1097, 302);
+	var f = new Car (1187, 109);
+	var g = new Car (1285, 141);
+	var h = new Car (797, 314);
+	var i = new Car (912, 342);
+	var j = new Car (417, 268);
+	var k = new Car (546, 213);
+	var l = new Car (625, 445);
+	var m = new Car (1046, 408);
+	var n = new Car (858, 407);
+	drawCar(a);
+	drawCar(b);
+	drawCar(c);
+	drawCar(d);
+	drawCar(e);
+	drawCar(f);
+	drawCar(g);
+	drawCar(h);
+	drawCar(i);
+	drawCar(j);
+	drawCar(k);
+	drawCar(l);
+	drawCar(m);
+	drawCar(n);
+	
+	$("h1").fadeOut(3000);
+    </script>
+	
+	<a href="TuorlaTrack.html" title="exit game" target="_blank" height="60" width ="300"><img src="exitgame.png"></a>
+    <a href="keywords page.html" title="keywords" target="_blank"><img src="keywords.png"></a>
+	<a href="TuorlaTrack.html" title="settings" target="_blank"><img src="settings.png"></a>
+	<a href="hangman.html" title="other games" target="_blank"><img src="othergames.png"></a>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	
+<script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> 
+    </script> 
+    <script> 
+        function geeks(msg, gfg) { 
+            var confirmBox = $("#container"); 
+              
+            /* Trace message to display */
+            confirmBox.find(".message").text(msg); 
+              
+            /* Calling function */
+            confirmBox.find(".yes").unbind().click(function()  
+            { 
+            confirmBox.hide(); 
+            }); 
+            confirmBox.find(".yes").click(gfg); 
+            confirmBox.show(); 
+              
+            confirmBox.find(".no").unbind().click(function()  
+            { 
+            confirmBox.hide(); 
+            }); 
+            confirmBox.find(".no").click(gfg); 
+            confirmBox.show(); 
+        } 
+    </script> 
+    <style> 
+      
+        /* Body alignment */     
+        body { 
+            text-align: center; 
+        } 
+          
+        /* Color for h1 tag */
+        h1 { 
+            color: blue; 
+        } 
+          
+        /* Designing dialog box */
+        #container { 
+            display: none; 
+            background-image: linear-gradient(to right, #66a80f, #c0eb75); 
+            background-size:cover; 
+            color: white; 
+            position: absolute; 
+            width: 350px; 
+            border-radius: 5px; 
+            left: 50%; 
+            margin-left: -160px; 
+            padding: 16px 8px 8px; 
+            box-sizing: border-box; 
+        } 
+          
+        /* Designing dialog box's okay buttun */
+        #container .yes { 
+            background-color: #5c940d; 
+            display: inline-block; 
+            border-radius: 5px; 
+            border: 2px solid gray; 
+            padding: 5px; 
+            margin-right: 10px; 
+            text-align: center; 
+            width: 60px; 
+            float: right; 
+        } 
+          
+        #container .no { 
+            background-color: #22b8cf; 
+            display: inline-block; 
+            border-radius: 5px; 
+            border: 2px solid gray; 
+            padding: 5px; 
+            margin-right: 10px; 
+            text-align: center; 
+            width: 95px; 
+            float: right; 
+        } 
+          
+        #container .yes:hover { 
+            background-color: #82c91e; 
+  
+        } 
+          
+        #container .no:hover { 
+            background-color: #99e9f2; 
+  
+        } 
+          
+        /* Dialog box message decorating */
+        #container .message { 
+            text-align: left; 
+            padding: 10px 30px; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <font size="+10" color="blue">TIS&FLL</font><br>	
+    <b><font color="009DFFFF">subscription</font></b> 
+    <br><br> 
+    <div id="container"> 
+        <div class="message"> 
+            Thanks for the Subscription</div> 
+        <button class="yes">okay</button> 
+        <button class="no">Unsubscribe</button> 
+    </div> 
+    <input id="subbutton" type="button" value="Subscribe" onclick="geeks();" />	
+	
+</body>
+</html>

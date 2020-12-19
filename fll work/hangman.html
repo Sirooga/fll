@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hangman</title>
+</head>
+<body>
+  <h1>Hangman</h1>
+  <h3>Computer related words</h3>
+  <img src = "hangman.png">
+  <br>
+  <button onclick="myFunction1()"><h4>START GAME</h4></button>
+  <br>
+  <button><a href="games.html"><h4>BACK TO GAMES</h4></a></button>
+  <br>
+  <button><a href="hngman.html"><h4>CODE FOR GAME HANGMAN</h4></a></button>
+
+  <script>
+  function myFunction1() {
+      var words = ["programm", "screen", "keybord", "computer", "laptop", "algorithm", "analog", "app", "array", "backup", "binary", "bit", "bite", "cache"];
+
+      var word = words[Math.floor(Math.random() * words.length)];
+
+      var answerArray = [];
+      for (var i = 0; i < word.length; i++) {
+        answerArray[i] = "_";
+      }
+
+      var remainingLetters = word.length;
+
+      while (remainingLetters > 0) {
+        alert (answerArray.join(" "));
+        var guess = prompt("Guess a letter:");
+        if (guess === null) {
+          break;
+        } else if (guess.length !== 1) {
+          alert("Enter one letter, please.");
+        } else {
+		  
+          for (var j = 0; j < word.length; j++) {
+            if (word[j] === guess) {
+              answerArray [j] = guess;
+              remainingLetters--;
+            }
+          }
+        }
+      }
+       alert (answerArray.join(" "));
+       alert ("The word was '" + word + "'!");
+        }
+  </script>
+</body>
+</html>

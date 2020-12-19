@@ -1,0 +1,175 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>videos</title>
+</head>
+<head> 
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> 
+    </script> 
+    <script> 
+        function geeks(msg, gfg) { 
+            var confirmBox = $("#container"); 
+              
+            /* Trace message to display */
+            confirmBox.find(".message").text(msg); 
+              
+            /* Calling function */
+            confirmBox.find(".yes").unbind().click(function()  
+            { 
+            confirmBox.hide(); 
+            }); 
+            confirmBox.find(".yes").click(gfg); 
+            confirmBox.show(); 
+              
+            confirmBox.find(".no").unbind().click(function()  
+            { 
+            confirmBox.hide(); 
+            }); 
+            confirmBox.find(".no").click(gfg); 
+            confirmBox.show(); 
+        } 
+    </script> 
+    <style> 
+      
+        /* Body alignment */     
+        body { 
+            text-align: center; 
+        } 
+          
+        /* Color for h1 tag */
+        h1 { 
+            color: black; 
+        } 
+          
+        /* Designing dialog box */
+        #container { 
+            display: none; 
+            background-image: linear-gradient(to right, #0055FFFF, #5790FFFF); 
+            background-size:cover; 
+            color: white; 
+            position: absolute; 
+            width: 350px; 
+            border-radius: 5px; 
+            left: 50%; 
+            margin-left: -160px; 
+            padding: 16px 8px 8px; 
+            box-sizing: border-box; 
+        } 
+          
+        /* Designing dialog box's okay buttun */
+        #container .yes { 
+            background-color: #7DFF3DFF; 
+            display: inline-block; 
+            border-radius: 5px; 
+            border: 2px solid gray; 
+            padding: 5px; 
+            margin-right: 10px; 
+            text-align: center; 
+            width: 60px; 
+            float: right; 
+        } 
+          
+        #container .no { 
+            background-color: #A1C9FFFF; 
+            display: inline-block; 
+            border-radius: 5px; 
+            border: 2px solid gray; 
+            padding: 5px; 
+            margin-right: 10px; 
+            text-align: center; 
+            width: 95px; 
+            float: right; 
+        } 
+          
+        #container .yes:hover { 
+            background-color: #82c91e; 
+  
+        } 
+          
+        #container .no:hover { 
+            background-color: #66A8FFFF; 
+  
+        } 
+          
+        /* Dialog box message decorating */
+        #container .message { 
+            text-align: left; 
+            padding: 10px 30px; 
+        } 
+    </style> 
+</head> 
+<body>
+
+<center>
+<table border="0" width="1350" height="50">
+<tr  bgcolor="#A5DBEEFF">
+<td width="40%"><font size="+2" face="arial"><b>TIS Replay</b></font></td>
+<td width="20%"><font face="arial"><p align="center"><a href="about us.html" style="text-decoration: none">ABOUT US</p></font></td>
+<td width="20%"><font face="arial"><p align="center"><a href="games.html" style="text-decoration: none">GAMES</p></font></td>
+<td width="20%" bgcolor="#6E56FFFF"><font face="arial"><p align="center"><a href="videos.html" style="text-decoration: none">VIDEOS</span></p></font></td>
+</tr>
+</table>
+</center>
+<img src = "vidpic.png" width="1350" height="200">
+<br>
+<br>
+<center>
+<h1>
+<font face="arial" size="+10">ROBOT BUILDING TUTORIALS</font><br><br>
+<font face="comic sans ms" size="+3">from Jory Martindale</font><br><br><br><br>
+</center>
+<div id="container"> 
+    <div class="message"> 
+        Thanks for the Subscription<br>TIS 
+		LEGO TEAM</div> 
+    <button class="yes">Okay</button> 
+    <button class="no">Unsubscribe</button> 
+</div> 
+<div style="text-align:center"> 
+  <button onclick="playPause()">Play/Pause</button> 
+  <button onclick="makeBig()">Big</button>
+  <button onclick="makeSmall()">Small</button>
+  <button onclick="makeNormal()">Normal</button>
+  <input type="button" value="Subscribe" onclick="geeks();" />
+  <br><br>
+  <video id="video1" width="420">
+    <source src="mov_bbb.mp4" type="video/mp4">
+    Your browser does not support HTML video.
+  </video>
+</div> 
+
+<script> 
+var myVideo = document.getElementById("video1"); 
+
+function playPause() { 
+  if (myVideo.paused) 
+    myVideo.play(); 
+  else 
+    myVideo.pause(); 
+} 
+
+function makeBig() { 
+    myVideo.width = 560; 
+} 
+
+function makeSmall() { 
+    myVideo.width = 320; 
+} 
+
+function makeNormal() { 
+    myVideo.width = 420; 
+} 
+</script> 
+<div style="background-image: url('links.png');">
+<font face="arial">
+<a href="https://sites.utu.fi/tis/"><font color="#FFFFFF"><h3>TIS front page</h3></font>
+<a href="https://www.utu.fi/en"><font color="#FFFFFF"><h3>Turku University</h3></font>
+<a href="https://www.facebook.com/turkuintschool/"><font color="#FFFFFF"><h3>TIS Facebook page</h3></font>
+<a href="fll in tis.html"><font color="#FFFFFF"><h3>Home page</h3></font>
+<a href="https://sites.utu.fi/tnk/en/"><font color="#FFFFFF"><h3>Turun Normalikoulu</h3></font>
+<a href="https://sites.utu.fi/tis/tis-clubs/"><font color="#FFFFFF"><h3>TIS clubs</h3></font>
+</font>
+</div> 
+</body>
+</html>
